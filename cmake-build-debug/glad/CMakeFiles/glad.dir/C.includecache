@@ -18,11 +18,19 @@ stdint.h
 KHR/khrplatform.h
 -
 
-/home/luka/Desktop/projekti/RG-TargetShooting/main.cpp
-iostream
+/home/luka/Desktop/projekti/RG-TargetShooting/glad/src/glad.c
+stdio.h
+-
+stdlib.h
+-
+string.h
 -
 glad/glad.h
 -
-GLFW/glfw3.h
+windows.h
+-
+winapifamily.h
+-
+dlfcn.h
 -
 

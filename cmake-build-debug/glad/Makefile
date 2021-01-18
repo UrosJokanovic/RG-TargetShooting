@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-deb
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/138/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -98,16 +87,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/snap/clion/138/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/glad/CMakeFiles/progress.marks
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,71 +117,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named RG_TargetShooting
+# Convenience name for target.
+glad/CMakeFiles/glad.dir/rule:
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/CMakeFiles/glad.dir/rule
+.PHONY : glad/CMakeFiles/glad.dir/rule
 
-# Build rule for target.
-RG_TargetShooting: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RG_TargetShooting
-.PHONY : RG_TargetShooting
+# Convenience name for target.
+glad: glad/CMakeFiles/glad.dir/rule
 
-# fast build rule for target.
-RG_TargetShooting/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/build
-.PHONY : RG_TargetShooting/fast
-
-#=============================================================================
-# Target rules for targets named glad
-
-# Build rule for target.
-glad: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad
 .PHONY : glad
 
 # fast build rule for target.
 glad/fast:
-	$(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
-main.o: main.cpp.o
+src/glad.o: src/glad.c.o
 
-.PHONY : main.o
+.PHONY : src/glad.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/glad.c.o:
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.c.o
+.PHONY : src/glad.c.o
 
-main.i: main.cpp.i
+src/glad.i: src/glad.c.i
 
-.PHONY : main.i
+.PHONY : src/glad.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/glad.c.i:
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.c.i
+.PHONY : src/glad.c.i
 
-main.s: main.cpp.s
+src/glad.s: src/glad.c.s
 
-.PHONY : main.s
+.PHONY : src/glad.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/glad.c.s:
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.c.s
+.PHONY : src/glad.c.s
 
 # Help Target
 help:
@@ -191,11 +180,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... RG_TargetShooting"
 	@echo "... glad"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/glad.o"
+	@echo "... src/glad.i"
+	@echo "... src/glad.s"
 .PHONY : help
 
 
@@ -207,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS = -g   -std=gnu++1z
 
-CXX_DEFINES = 
+CXX_DEFINES = -DGLFW_DLL
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/luka/Desktop/projekti/RG-TargetShooting/glad/include 
 
