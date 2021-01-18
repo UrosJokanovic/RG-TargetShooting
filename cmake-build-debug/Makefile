@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/137/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/138/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/138/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/uros/Desktop/RG-TargetShooting
+CMAKE_SOURCE_DIR = /home/luka/Desktop/projekti/RG-TargetShooting
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/uros/Desktop/RG-TargetShooting/cmake-build-debug
+CMAKE_BINARY_DIR = /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/uros/Desktop/RG-TargetShooting/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/137/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/138/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/137/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/138/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uros/Desktop/RG-TargetShooting/cmake-build-debug/CMakeFiles /home/uros/Desktop/RG-TargetShooting/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uros/Desktop/RG-TargetShooting/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luka/Desktop/projekti/RG-TargetShooting/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,110 +131,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RG-TargetShooting
+# Target rules for targets named RG_TargetShooting
 
 # Build rule for target.
-RG-TargetShooting: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RG-TargetShooting
-.PHONY : RG-TargetShooting
+RG_TargetShooting: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RG_TargetShooting
+.PHONY : RG_TargetShooting
 
 # fast build rule for target.
-RG-TargetShooting/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG-TargetShooting.dir/build.make CMakeFiles/RG-TargetShooting.dir/build
-.PHONY : RG-TargetShooting/fast
+RG_TargetShooting/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/build
+.PHONY : RG_TargetShooting/fast
 
-#=============================================================================
-# Target rules for targets named STB_IMAGE
+main.o: main.cpp.o
 
-# Build rule for target.
-STB_IMAGE: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 STB_IMAGE
-.PHONY : STB_IMAGE
-
-# fast build rule for target.
-STB_IMAGE/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STB_IMAGE.dir/build.make CMakeFiles/STB_IMAGE.dir/build
-.PHONY : STB_IMAGE/fast
-
-#=============================================================================
-# Target rules for targets named glad
-
-# Build rule for target.
-glad: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad
-.PHONY : glad
-
-# fast build rule for target.
-glad/fast:
-	$(MAKE) $(MAKESILENT) -f libs/glad/CMakeFiles/glad.dir/build.make libs/glad/CMakeFiles/glad.dir/build
-.PHONY : glad/fast
-
-#=============================================================================
-# Target rules for targets named imgui
-
-# Build rule for target.
-imgui: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imgui
-.PHONY : imgui
-
-# fast build rule for target.
-imgui/fast:
-	$(MAKE) $(MAKESILENT) -f libs/imgui/CMakeFiles/imgui.dir/build.make libs/imgui/CMakeFiles/imgui.dir/build
-.PHONY : imgui/fast
-
-libs/stb_image.o: libs/stb_image.cpp.o
-
-.PHONY : libs/stb_image.o
+.PHONY : main.o
 
 # target to build an object file
-libs/stb_image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STB_IMAGE.dir/build.make CMakeFiles/STB_IMAGE.dir/libs/stb_image.cpp.o
-.PHONY : libs/stb_image.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-libs/stb_image.i: libs/stb_image.cpp.i
+main.i: main.cpp.i
 
-.PHONY : libs/stb_image.i
-
-# target to preprocess a source file
-libs/stb_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STB_IMAGE.dir/build.make CMakeFiles/STB_IMAGE.dir/libs/stb_image.cpp.i
-.PHONY : libs/stb_image.cpp.i
-
-libs/stb_image.s: libs/stb_image.cpp.s
-
-.PHONY : libs/stb_image.s
-
-# target to generate assembly for a file
-libs/stb_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STB_IMAGE.dir/build.make CMakeFiles/STB_IMAGE.dir/libs/stb_image.cpp.s
-.PHONY : libs/stb_image.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG-TargetShooting.dir/build.make CMakeFiles/RG-TargetShooting.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
+.PHONY : main.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG-TargetShooting.dir/build.make CMakeFiles/RG-TargetShooting.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-src/main.s: src/main.cpp.s
+main.s: main.cpp.s
 
-.PHONY : src/main.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG-TargetShooting.dir/build.make CMakeFiles/RG-TargetShooting.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RG_TargetShooting.dir/build.make CMakeFiles/RG_TargetShooting.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -244,16 +178,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... RG-TargetShooting"
-	@echo "... STB_IMAGE"
-	@echo "... glad"
-	@echo "... imgui"
-	@echo "... libs/stb_image.o"
-	@echo "... libs/stb_image.i"
-	@echo "... libs/stb_image.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... RG_TargetShooting"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
